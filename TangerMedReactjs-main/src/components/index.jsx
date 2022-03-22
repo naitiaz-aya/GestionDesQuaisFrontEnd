@@ -1,5 +1,6 @@
 import {LoginForm} from "./LoginForm";
+import {EditFormUser} from "./EditFormUser";
 import {Navigation} from "./Navigation";
 import Sidebar from "./Sidebar";
-import CardTable from "./CardTable";
-export {LoginForm, Navigation, Sidebar, CardTable};
+
+export {LoginForm, Navigation, Sidebar,EditFormUser};

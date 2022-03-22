@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export  function Navigation() {
   return <header className="flex justify-between items-center py-4 md:py-8">
@@ -6,13 +7,27 @@ export  function Navigation() {
     <svg width="95" height="94" viewBox="0 0 95 94" className="w-6 h-auto text-indigo-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path d="M96 0V47L48 94H0V47L48 0H96Z" />
     </svg>
-
     TangerMed
   </a>
   <nav className="hidden lg:flex gap-12">
-    <a href="#" className="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Home</a>
-    <a href="#" className="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Reserve</a>
-    <a href="#" className="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Users</a>
+  <Link
+          to="/"
+          className="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100"
+        >
+          <span>Home</span>
+        </Link>
+        <Link
+          to="/register"  
+          className="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100"
+        >
+          <span>Reserve</span>
+        </Link>
+        <Link
+          to="/users"
+          className="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100"
+        >
+          <span>Users</span>
+        </Link>
   </nav>
  
   <div className="hidden lg:flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5 -ml-8">

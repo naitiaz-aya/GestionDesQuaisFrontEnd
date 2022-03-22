@@ -1,29 +1,29 @@
-import React, { useState, useEffect, useContext } from "react";
-import { LoginForm } from "../../components";
-import axios from "axios";
-import { AuthContext } from "../../store/AuthContext";
-import {  useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react"
+import { LoginForm } from "../../components"
+import axios from "axios"
+import { AuthContext } from "../../store/AuthContext"
+import {  useNavigate } from "react-router-dom"
 export function LoginPage() {
-  const [FormData, setFormData] = useState(null);
-  const { auth, setAuth } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const [FormData, setFormData] = useState(null)
+  const { auth, setAuth } = useContext(AuthContext)
+  const navigate = useNavigate()
   useEffect(() => {
     if (FormData) {
       axios
-        .post("http://localhost:8088/api/v1/users/login", FormData)
+        .post("http://localhost:8080/api/v1/users/login", FormData)
         .then(res=>res.status === 200 && setAuth({ loggedIn: true }))
-        .catch((err) => console.log(err.response));
+        .catch((err) => console.log(err.response))
     }
-  },[FormData]);
+  },[FormData])
 
   useEffect(() => {
     
     if (auth.loggedIn) {
       navigate("/", {
         replace: true,
-      });     
+      })
     }
-  },[auth]);
+  },[auth])
   
   return (
     <div className="bg-white py-6 sm:py-8 lg:py-12">
@@ -33,5 +33,5 @@ export function LoginPage() {
         </h2>
       </div>
     </div>
-  );
+  )
 }

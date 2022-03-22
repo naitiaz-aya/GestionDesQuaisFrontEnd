@@ -1,5 +1,6 @@
 import React from "react";
 import Error from "../../assets/img/404.png";
+import { Link } from "react-router-dom";
 export function NotFoundPage() {
   return (
     <div className="bg-white py-6 sm:py-8 lg:py-12">
@@ -34,13 +35,11 @@ export function NotFoundPage() {
           <p className="max-w-screen-md text-gray-500 md:text-lg text-center mb-12">
             The page you’re looking for doesn’t exist.
           </p>
-
-          <a
-            href="#"
-            className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
-          >
-            Go home
-          </a>
+          <Link to="/" className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+                      <small>Go home</small>
+                    </Link>
+          
+            
         </div>
       </div>
     </div>
